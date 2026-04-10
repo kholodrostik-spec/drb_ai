@@ -74,17 +74,17 @@ class RouteSegment:
 
 @dataclass
 class Route:
-    """Complete route with all metrics."""
     route_type: RouteType
     segments: List[RouteSegment]
-    locations: List[Location]  # All stops including start/end
-    total_time: float  # minutes including visits
-    travel_time_only: float  # minutes of actual travel
-    total_distance: float  # meters
-    total_rating: float  # sum of intermediate location ratings
-    interestingness_score: float  # 0-100
-    efficiency_score: float  # rating per minute
-    visit_time_total: float  # minutes spent visiting
+    locations: List[Location]
+    path: List[tuple[float, float]]   # lat, lon
+    total_time: float
+    travel_time_only: float
+    total_distance: float
+    total_rating: float
+    interestingness_score: float
+    efficiency_score: float
+    visit_time_total: float
 
 @dataclass
 class ApiLog:
